@@ -4,10 +4,10 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v4 # Zaktualizowane do v4
+    - uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v5 # Zaktualizowane do v5
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
@@ -17,10 +17,10 @@ jobs:
 
     - name: Build EXE
       run: |
-        pyinstaller --noconsole --onefile --icon=ikona.ico --name "Tlumacz_Multi_A6" main.py
+        pyinstaller --noconsole --onefile --name "Tlumacz_Multi_A6" main.py
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v4 # TUTAJ BYŁ BŁĄD - Zaktualizowane do v4
+      uses: actions/upload-artifact@v4
       with:
         name: Gotowy_Program
         path: dist/Tlumacz_Multi_A6.exe
